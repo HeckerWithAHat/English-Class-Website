@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" data-theme="lofi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Volumes Shelf</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .book-center-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+      }
+
+      .book-frame::before {
+        content: "";
+        position: absolute;
+        inset: 10px 8px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        pointer-events: none;
+      }
+
+      .book-frame::after {
+        content: "";
+        position: absolute;
+        top: 16px;
+        bottom: 16px;
+        left: 16px;
+        width: 5px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.24);
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-b from-[#f3e7d3] to-[#e6c89a] text-[#2e1b0f] p-4 sm:p-6"
+  >
+    <main class="mx-auto w-full max-w-7xl">
+      <h1
+        class="mb-7 text-center text-4xl font-black uppercase tracking-[0.14em] text-[#4a2d1a] drop-shadow-[0_2px_0_rgba(255,255,255,0.45)] sm:text-5xl"
+      >
+        Volumes
+      </h1>
+
+      <section
+        class="card relative overflow-hidden rounded-[28px] border border-[#5f381f] bg-gradient-to-b from-[#6f4427] to-[#8d5b34] p-4 shadow-[0_24px_60px_rgba(49,27,10,0.28)] sm:p-7"
+        aria-label="Book volume buttons"
+      >
+        <div
+          class="pointer-events-none absolute left-5 right-5 top-4 h-4 rounded-full bg-white/10"
+        ></div>
+        <div
+          class="pointer-events-none absolute bottom-4 left-5 right-5 h-4 rounded-full bg-white/10"
+        ></div>
+
+        <div
+          class="flex min-h-[520px] flex-wrap items-end justify-center gap-3 px-1 py-4 sm:gap-4 sm:px-3"
+        >
+          <a
+            href="{{ url_for('summary') }}"
+            class="book-frame bg-[url(/file/spine.png)] bg-cover relative flex h-[420px] w-[110px] -rotate-[0.7deg] flex-col justify-between overflow-hidden rounded-t-[20px] rounded-b-[10px] border-0 px-2.5 pb-4 pt-4 text-[#ffe66b] shadow-[inset_0_0_0_2px_rgba(255,255,255,0.14),inset_0_-16px_24px_rgba(0,0,0,0.2),0_12px_24px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-2 hover:-rotate-[1.8deg] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffe66b] sm:h-[460px] sm:w-[130px]"
+          >
+            <span class="relative z-10 text-center text-[0.62rem] font-extrabold uppercase tracking-[0.14em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)]">Encyclopedia Galactica</span>
+            <span class="pointer-events-none absolute inset-0 grid place-items-center py-[94px]">
+              <span class="book-center-text text-center text-[1.35rem] font-bold tracking-[0.1em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)] sm:text-[1.52rem]">Summary</span>
+            </span>
+            <span class="relative z-10 text-center text-[0.75rem] font-extrabold uppercase tracking-[0.16em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)]">Volume 7</span>
+          </a>
+
+          <a
+            href="{{ url_for('purpose') }}"
+            class="book-frame bg-[url(/file/spine.png)] bg-cover relative flex h-[420px] w-[110px] rotate-[0.45deg] flex-col justify-between overflow-hidden rounded-t-[20px] rounded-b-[10px] border-0 px-2.5 pb-4 pt-4 text-[#ffe66b] shadow-[inset_0_0_0_2px_rgba(255,255,255,0.14),inset_0_-16px_24px_rgba(0,0,0,0.2),0_12px_24px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-2 hover:rotate-[1.2deg] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffe66b] sm:h-[460px] sm:w-[130px]"
+          >
+            <span class="relative z-10 text-center text-[0.62rem] font-extrabold uppercase tracking-[0.14em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)]">Encyclopedia Galactica</span>
+            <span class="pointer-events-none absolute inset-0 grid place-items-center py-[94px]">
+              <span class="book-center-text text-center text-[1.35rem] font-bold tracking-[0.1em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)] sm:text-[1.52rem]">Purpose</span>
+            </span>
+            <span class="relative z-10 text-center text-[0.75rem] font-extrabold uppercase tracking-[0.16em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)]">Volume 6</span>
+          </a>
+
+          <a
+            href="{{ url_for('author') }}"
+            class="book-frame bg-[url(/file/spine.png)] bg-cover relative flex h-[420px] w-[110px] -rotate-[0.6deg] flex-col justify-between overflow-hidden rounded-t-[20px] rounded-b-[10px] border-0 px-2.5 pb-4 pt-4 text-[#ffe66b] shadow-[inset_0_0_0_2px_rgba(255,255,255,0.14),inset_0_-16px_24px_rgba(0,0,0,0.2),0_12px_24px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-2 hover:-rotate-[1.8deg] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffe66b] sm:h-[460px] sm:w-[130px]"
+          >
+            <span class="relative z-10 text-center text-[0.62rem] font-extrabold uppercase tracking-[0.14em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)]">Encyclopedia Galactica</span>
+            <span class="pointer-events-none absolute inset-0 grid place-items-center py-[94px]">
+              <span class="book-center-text text-center text-[1.35rem] font-bold tracking-[0.1em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)] sm:text-[1.52rem]">Author</span>
+            </span>
+            <span class="relative z-10 text-center text-[0.75rem] font-extrabold uppercase tracking-[0.16em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)]">Volume 1</span>
+          </a>
+
+          <a
+            href="{{ url_for('research') }}"
+            class="book-frame bg-[url(/file/spine.png)] bg-cover relative flex h-[420px] w-[110px] rotate-[0.4deg] flex-col justify-between overflow-hidden rounded-t-[20px] rounded-b-[10px] border-0 px-2.5 pb-4 pt-4 text-[#ffe66b] shadow-[inset_0_0_0_2px_rgba(255,255,255,0.14),inset_0_-16px_24px_rgba(0,0,0,0.2),0_12px_24px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-2 hover:-rotate-[1.2deg] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffe66b] sm:h-[460px] sm:w-[130px]"
+          >
+            <span class="relative z-10 text-center text-[0.62rem] font-extrabold uppercase tracking-[0.14em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)]">Encyclopedia Galactica</span>
+            <span class="pointer-events-none absolute inset-0 grid place-items-center py-[94px]">
+              <span class="book-center-text text-center text-[1.35rem] font-bold tracking-[0.1em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)] sm:text-[1.52rem]">Research</span>
+            </span>
+            <span class="relative z-10 text-center text-[0.75rem] font-extrabold uppercase tracking-[0.16em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)]">Volume 2</span>
+          </a>
+
+          <a
+            href="{{ url_for('litlum') }}"
+            class="book-frame bg-[url(/file/spine.png)] bg-cover relative flex h-[420px] w-[110px] -rotate-[0.3deg] flex-col justify-between overflow-hidden rounded-t-[20px] rounded-b-[10px] border-0 px-2.5 pb-4 pt-4 text-[#ffe66b] shadow-[inset_0_0_0_2px_rgba(255,255,255,0.14),inset_0_-16px_24px_rgba(0,0,0,0.2),0_12px_24px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-2 hover:-rotate-[1.4deg] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffe66b] sm:h-[460px] sm:w-[130px]"
+          >
+            <span class="relative z-10 text-center text-[0.62rem] font-extrabold uppercase tracking-[0.14em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)]">Encyclopedia Galactica</span>
+            <span class="pointer-events-none absolute inset-0 grid place-items-center py-[94px]">
+              <span class="book-center-text text-center text-[1.35rem] font-bold tracking-[0.1em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)] sm:text-[1.52rem]">Quotes</span>
+            </span>
+            <span class="relative z-10 text-center text-[0.75rem] font-extrabold uppercase tracking-[0.16em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)]">Volume 5</span>
+          </a>
+
+          <a
+            href="{{ url_for('character') }}"
+            class="book-frame bg-[url(/file/spine.png)] bg-cover relative flex h-[420px] w-[110px] -rotate-[0.5deg] flex-col justify-between overflow-hidden rounded-t-[20px] rounded-b-[10px] border-0 px-2.5 pb-4 pt-4 text-[#ffe66b] shadow-[inset_0_0_0_2px_rgba(255,255,255,0.14),inset_0_-16px_24px_rgba(0,0,0,0.2),0_12px_24px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-2 hover:-rotate-[1.7deg] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffe66b] sm:h-[460px] sm:w-[130px]"
+          >
+            <span class="relative z-10 text-center text-[0.62rem] font-extrabold uppercase tracking-[0.14em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)]">Encyclopedia Galactica</span>
+            <span class="pointer-events-none absolute inset-0 grid place-items-center py-[94px]">
+              <span class="book-center-text text-center text-[1.35rem] font-bold tracking-[0.1em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)] sm:text-[1.52rem]">Characters</span>
+            </span>
+            <span class="relative z-10 text-center text-[0.75rem] font-extrabold uppercase tracking-[0.16em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)]">Volume 3</span>
+          </a>
+
+          <a
+            href="{{ url_for('glossary') }}"
+            class="book-frame bg-[url(/file/spine.png)] bg-cover relative flex h-[420px] w-[110px] rotate-[0.6deg] flex-col justify-between overflow-hidden rounded-t-[20px] rounded-b-[10px] border-0 px-2.5 pb-4 pt-4 text-[#ffe66b] shadow-[inset_0_0_0_2px_rgba(255,255,255,0.14),inset_0_-16px_24px_rgba(0,0,0,0.2),0_12px_24px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-2 hover:rotate-[1.2deg] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffe66b] sm:h-[460px] sm:w-[130px]"
+          >
+            <span class="relative z-10 text-center text-[0.62rem] font-extrabold uppercase tracking-[0.14em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)]">Encyclopedia Galactica</span>
+            <span class="pointer-events-none absolute inset-0 grid place-items-center py-[94px]">
+              <span class="book-center-text text-center text-[1.35rem] font-bold tracking-[0.1em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)] sm:text-[1.52rem]">Glossary</span>
+            </span>
+            <span class="relative z-10 text-center text-[0.75rem] font-extrabold uppercase tracking-[0.16em] drop-shadow-[0_1px_0_rgba(0,0,0,0.45)]">Volume 4</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

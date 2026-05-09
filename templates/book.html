@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en" data-theme="lofi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A collaborative companion site for Foundation by Isaac Asimov."
+    />
+    <title>{% block title %}Foundation Project{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/file/turn.js"></script>
+    <style>
+      :root{
+        --bg-dark-0: #1a1313;
+        --bg-dark-1: #2f1c1c;
+        --bg-dark-2: #1f1616;
+        --accent-yellow: #f5c34d; /* softened gold */
+        --accent-red: #7f1d1d; /* deep maroon */
+        --accent-yellow-soft: rgba(245, 195, 77, 0.10);
+        --accent-red-soft: rgba(127, 29, 29, 0.10);
+        --linear-start: #f5c34d;
+        --linear-end: #7f1d1d;
+        --frame-border: rgba(254, 240, 138, 0.45);
+        --cover-highlight: rgba(250, 204, 21, 0.50);
+        --back-border: rgba(212, 212, 216, 0.35);
+      }
+
+      body {
+        background:
+          radial-gradient(circle at 20% 20%, var(--accent-yellow-soft), transparent 30%),
+          radial-gradient(circle at 80% 80%, var(--accent-red-soft), transparent 32%),
+          linear-gradient(160deg, var(--bg-dark-2) 0%, var(--bg-dark-1) 50%, var(--bg-dark-0) 100%);
+        transition:  360ms ease;
+      }
+
+      #foundation-book .cover-page {
+        position: relative;
+        color: #fff9e8;
+        padding: 2rem;
+        background:
+          linear-gradient(160deg, rgba(69, 10, 10, 0.9) 0%, rgba(127, 29, 29, 0.9) 55%, rgba(180, 83, 9, 0.9) 100%),
+          radial-gradient(circle at 80% 18%, var(--cover-highlight), transparent 36%);
+      }
+
+      #foundation-book .cover-page::after {
+        content: "";
+        position: absolute;
+        inset: 0.8rem;
+        border: 2px solid var(--frame-border);
+        pointer-events: none;
+      }
+
+      #foundation-book .inside-page {
+        background: linear-gradient(180deg, #f9f4e8 0%, #efe7d8 100%);
+      }
+
+      #foundation-book .back-cover {
+        position: relative;
+        background:
+          linear-gradient(165deg, rgba(63, 63, 70, 0.96) 0%, rgba(39, 39, 42, 0.95) 100%),
+          radial-gradient(circle at 20% 30%, rgba(212,212,216,0.28), transparent 40%);
+      }
+
+      #foundation-book .back-cover::after {
+        content: "";
+        position: absolute;
+        inset: 0.9rem;
+        border: 1px solid var(--back-border);
+        pointer-events: none;
+      }
+
+      @media (max-width: 1024px) {
+        .page-shell {
+          padding-bottom: 2rem;
+        }
+
+        .book-layout {
+          min-height: calc(100vh - 4rem);
+        }
+
+        #foundation-book {
+          width: min(94vw, 900px);
+        }
+      }
+    </style>
+    {% block head %}{% endblock %}
+  </head>
+  <body class="min-h-screen text-base-content z-40">
+    <main class="flex flex-row h-screen w-full justify-center">
+      <div class="flex flex-col h-screen justify-center">
+        <div id="flipbook">
+          <div class="hard bg-[url(/file/cover.png)] bg-contain rounded-lg"></div>
+          <div class="hard bg-[url(/file/blank.png)] bg-contain rounded-lg"></div>
+          {% block book_pages %}{% endblock %}
+          <div class="hard bg-[url(/file/blank.png)] bg-contain rounded-lg"></div>
+          <div class="hard bg-[url(/file/back.png)] bg-contain rounded-lg"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script>
+    $("#flipbook").turn({
+      width: 900,
+      height: 600,
+      autoCenter: true,
+    });
+
+    (() => {
+      const body = document.body;
+      if (!body) return;
+
+      let x = 20;
+      let y = 20;
+      let rafId = 0;
+
+      const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
+      const rootStyles = () => getComputedStyle(document.documentElement);
+
+      const paintBackground = () => {
+        rafId = 0;
+
+        const x2 = 100 - x;
+        const y2 = 100 - y;
+
+        const dx = x2 - x;
+        const dy = y2 - y;
+        const dividerAngle = (Math.atan2(dy, dx) * 180) / Math.PI + 90;
+
+        const styles = rootStyles();
+        const yellowSoft = styles.getPropertyValue('--accent-yellow-soft').trim() || 'rgba(245,195,77,0.10)';
+        const redSoft = styles.getPropertyValue('--accent-red-soft').trim() || 'rgba(127,29,29,0.10)';
+        const linearStart = styles.getPropertyValue('--linear-start').trim() || '#f5c34d';
+        const linearEnd = styles.getPropertyValue('--linear-end').trim() || '#7f1d1d';
+
+        body.style.background = `
+          radial-gradient(circle at ${x.toFixed(2)}% ${y.toFixed(2)}%, ${yellowSoft}, transparent 30%),
+          radial-gradient(circle at ${x2.toFixed(2)}% ${y2.toFixed(2)}%, ${redSoft}, transparent 32%),
+          linear-gradient(${dividerAngle.toFixed(2)}deg, ${linearStart} 0%, ${linearEnd} 100%)
+        `;
+      };
+
+      const updateFromPointer = (event) => {
+        const rect = body.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+
+        x = clamp(((event.clientX - rect.left) / rect.width) * 100, 0, 100);
+        y = clamp(((event.clientY - rect.top) / rect.height) * 100, 0, 100);
+
+        if (!rafId) rafId = requestAnimationFrame(paintBackground);
+      };
+
+      window.addEventListener("pointermove", updateFromPointer, { passive: true });
+      paintBackground();
+    })();
+  </script>
+</html>

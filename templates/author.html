@@ -1,13 +1,38 @@
 {% extends "book.html" %}
 
-{% block title %}Foundation Project | Home{% endblock %}
+{% block title %}Foundation Project | Author{% endblock %}
 
 {% block book_pages %}
-	<div class="bg-gray-300 rounded-lg">
-		Page 1
+	<!-- Page 1: Author Image and Name -->
+	<div class="bg-white rounded-lg p-8 flex flex-col items-center justify-center h-full">
+		<div class="mb-6">
+			<img src="https://cdn.britannica.com/82/195182-050-97684526/Isaac-Asimov-1979.jpg" alt="Isaac Asimov" class="w-64 h-64 object-cover border-4 border-gray-400 rounded-lg">
+		</div>
+		<h1 class="text-4xl font-bold text-gray-800 text-center">Isaac Asimov</h1>
 	</div>
-	<div class="bg-gray-300 rounded-lg">
-		Page 2
+
+	<!-- Page 2: Early Life & Background -->
+	<div class="bg-white rounded-lg p-8">
+		<h2 class="text-3xl font-bold text-gray-800 mb-4">Early Life & Background</h2>
+		<div class="bg-gray-100 rounded-lg p-6 h-48 border-2 border-gray-300">
+			<p class="text-gray-500 italic">Add information about Asimov's early life, birth, family, and formative years here...</p>
+		</div>
+	</div>
+
+	<!-- Page 3: Career & Achievements -->
+	<div class="bg-white rounded-lg p-8">
+		<h2 class="text-3xl font-bold text-gray-800 mb-4">Career & Achievements</h2>
+		<div class="bg-gray-100 rounded-lg p-6 h-48 border-2 border-gray-300">
+			<p class="text-gray-500 italic">Add information about his writing career, major works, scientific contributions, and achievements...</p>
+		</div>
+	</div>
+
+	<!-- Page 4: Legacy & Impact -->
+	<div class="bg-white rounded-lg p-8">
+		<h2 class="text-3xl font-bold text-gray-800 mb-4">Legacy & Impact</h2>
+		<div class="bg-gray-100 rounded-lg p-6 h-48 border-2 border-gray-300">
+			<p class="text-gray-500 italic">Add information about his influence on science fiction, his lasting impact on literature and science, and his cultural significance...</p>
+		</div>
 	</div>
 
 {% endblock %}

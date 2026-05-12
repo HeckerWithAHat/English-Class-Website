@@ -1,13 +1,267 @@
 {% extends "book.html" %}
 
-{% block title %}Foundation Project | Home{% endblock %}
+{% block title %}Foundation Project | Quotes{% endblock %}
 
 {% block book_pages %}
-	<div class="bg-gray-300 rounded-lg">
-		Page 1
-	</div>
-	<div class="bg-gray-300 rounded-lg">
-		Page 2
-	</div>
+
+  <div class="inside-page rounded-lg h-full">
+    <div class="flex items-center justify-between gap-4 mb-5 pb-4 border-b border-red-900/10">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.35em] text-red-900/55 mb-1">Foundation Quote Notes</p>
+        <h1 class="page-heading mb-0">Quote 1</h1>
+      </div>
+      <div class="rounded-2xl border border-red-900/15 bg-white/80 px-4 py-2 text-right shadow-sm">
+        <p class="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-red-900/50 mb-1">Page</p>
+        <p class="text-lg font-bold text-red-900 leading-none">1</p>
+      </div>
+    </div>
+
+    <div class="space-y-4 flex-1">
+      <section class="rounded-2xl border border-red-900/10 bg-white/75 p-4 shadow-sm">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="page-subheading !m-0">Chapter and Page</h2>
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45">Source details</span>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="rounded-xl border border-red-900/10 bg-amber-50/75 p-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45 mb-2">Chapter</p>
+            <p class="text-lg font-bold text-red-900">Add chapter number</p>
+          </div>
+          <div class="rounded-xl border border-red-900/10 bg-amber-50/75 p-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45 mb-2">Page</p>
+            <p class="text-lg font-bold text-red-900">1</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-2xl border border-red-900/10 bg-gradient-to-br from-white to-amber-50/70 p-4 shadow-sm">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="page-subheading !m-0">Quote</h2>
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45">Excerpt</span>
+        </div>
+        <div class="min-h-56 rounded-xl border border-dashed border-red-900/20 bg-white/80 p-4 text-gray-500 italic leading-relaxed">
+          Paste the quote from Foundation here. Keep it centered and readable so this page acts as the quote record.
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="inside-page rounded-lg h-full">
+    <div class="flex items-center justify-between gap-4 mb-5 pb-4 border-b border-red-900/10">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.35em] text-red-900/55 mb-1">Foundation Quote Notes</p>
+        <h1 class="page-heading mb-0">Analysis 1</h1>
+      </div>
+      <div class="rounded-2xl border border-red-900/15 bg-white/80 px-4 py-2 text-right shadow-sm">
+        <p class="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-red-900/50 mb-1">Page</p>
+        <p class="text-lg font-bold text-red-900 leading-none">2</p>
+      </div>
+    </div>
+
+    <div class="rounded-2xl border border-red-900/10 bg-white/75 p-4 shadow-sm h-full flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="page-subheading !m-0">Analysis</h2>
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45">Interpretation</span>
+      </div>
+      <div class="flex-1 rounded-xl border border-red-900/10 bg-gradient-to-br from-amber-50/60 to-white/90 p-4 text-gray-500 italic leading-relaxed">
+        Write a short summary of the quote and explain its meaning, its connection to the chapter, and why it matters to the story.
+      </div>
+    </div>
+  </div>
+
+  <div class="inside-page rounded-lg h-full">
+    <div class="flex items-center justify-between gap-4 mb-5 pb-4 border-b border-red-900/10">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.35em] text-red-900/55 mb-1">Foundation Quote Notes</p>
+        <h1 class="page-heading mb-0">Quote 2</h1>
+      </div>
+      <div class="rounded-2xl border border-red-900/15 bg-white/80 px-4 py-2 text-right shadow-sm">
+        <p class="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-red-900/50 mb-1">Page</p>
+        <p class="text-lg font-bold text-red-900 leading-none">3</p>
+      </div>
+    </div>
+
+    <div class="space-y-4 flex-1">
+      <section class="rounded-2xl border border-red-900/10 bg-white/75 p-4 shadow-sm">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="page-subheading !m-0">Chapter and Page</h2>
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45">Source details</span>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="rounded-xl border border-red-900/10 bg-amber-50/75 p-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45 mb-2">Chapter</p>
+            <p class="text-lg font-bold text-red-900">Add chapter number</p>
+          </div>
+          <div class="rounded-xl border border-red-900/10 bg-amber-50/75 p-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45 mb-2">Page</p>
+            <p class="text-lg font-bold text-red-900">2</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-2xl border border-red-900/10 bg-gradient-to-br from-white to-amber-50/70 p-4 shadow-sm">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="page-subheading !m-0">Quote</h2>
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45">Excerpt</span>
+        </div>
+        <div class="min-h-56 rounded-xl border border-dashed border-red-900/20 bg-white/80 p-4 text-gray-500 italic leading-relaxed">
+          Paste the quote from Foundation here. Keep it centered and readable so this page acts as the quote record.
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="inside-page rounded-lg h-full">
+    <div class="flex items-center justify-between gap-4 mb-5 pb-4 border-b border-red-900/10">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.35em] text-red-900/55 mb-1">Foundation Quote Notes</p>
+        <h1 class="page-heading mb-0">Analysis 2</h1>
+      </div>
+      <div class="rounded-2xl border border-red-900/15 bg-white/80 px-4 py-2 text-right shadow-sm">
+        <p class="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-red-900/50 mb-1">Page</p>
+        <p class="text-lg font-bold text-red-900 leading-none">4</p>
+      </div>
+    </div>
+
+    <div class="rounded-2xl border border-red-900/10 bg-white/75 p-4 shadow-sm h-full flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="page-subheading !m-0">Analysis</h2>
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45">Interpretation</span>
+      </div>
+      <div class="flex-1 rounded-xl border border-red-900/10 bg-gradient-to-br from-amber-50/60 to-white/90 p-4 text-gray-500 italic leading-relaxed">
+        Write a short summary of the quote and explain its meaning, its connection to the chapter, and why it matters to the story.
+      </div>
+    </div>
+  </div>
+
+  <div class="inside-page rounded-lg h-full">
+    <div class="flex items-center justify-between gap-4 mb-5 pb-4 border-b border-red-900/10">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.35em] text-red-900/55 mb-1">Foundation Quote Notes</p>
+        <h1 class="page-heading mb-0">Quote 3</h1>
+      </div>
+      <div class="rounded-2xl border border-red-900/15 bg-white/80 px-4 py-2 text-right shadow-sm">
+        <p class="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-red-900/50 mb-1">Page</p>
+        <p class="text-lg font-bold text-red-900 leading-none">5</p>
+      </div>
+    </div>
+
+    <div class="space-y-4 flex-1">
+      <section class="rounded-2xl border border-red-900/10 bg-white/75 p-4 shadow-sm">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="page-subheading !m-0">Chapter and Page</h2>
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45">Source details</span>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="rounded-xl border border-red-900/10 bg-amber-50/75 p-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45 mb-2">Chapter</p>
+            <p class="text-lg font-bold text-red-900">Add chapter number</p>
+          </div>
+          <div class="rounded-xl border border-red-900/10 bg-amber-50/75 p-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45 mb-2">Page</p>
+            <p class="text-lg font-bold text-red-900">3</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-2xl border border-red-900/10 bg-gradient-to-br from-white to-amber-50/70 p-4 shadow-sm">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="page-subheading !m-0">Quote</h2>
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45">Excerpt</span>
+        </div>
+        <div class="min-h-56 rounded-xl border border-dashed border-red-900/20 bg-white/80 p-4 text-gray-500 italic leading-relaxed">
+          Paste the quote from Foundation here. Keep it centered and readable so this page acts as the quote record.
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="inside-page rounded-lg h-full">
+    <div class="flex items-center justify-between gap-4 mb-5 pb-4 border-b border-red-900/10">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.35em] text-red-900/55 mb-1">Foundation Quote Notes</p>
+        <h1 class="page-heading mb-0">Analysis 3</h1>
+      </div>
+      <div class="rounded-2xl border border-red-900/15 bg-white/80 px-4 py-2 text-right shadow-sm">
+        <p class="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-red-900/50 mb-1">Page</p>
+        <p class="text-lg font-bold text-red-900 leading-none">6</p>
+      </div>
+    </div>
+
+    <div class="rounded-2xl border border-red-900/10 bg-white/75 p-4 shadow-sm h-full flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="page-subheading !m-0">Analysis</h2>
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45">Interpretation</span>
+      </div>
+      <div class="flex-1 rounded-xl border border-red-900/10 bg-gradient-to-br from-amber-50/60 to-white/90 p-4 text-gray-500 italic leading-relaxed">
+        Write a short summary of the quote and explain its meaning, its connection to the chapter, and why it matters to the story.
+      </div>
+    </div>
+  </div>
+
+  <div class="inside-page rounded-lg h-full">
+    <div class="flex items-center justify-between gap-4 mb-5 pb-4 border-b border-red-900/10">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.35em] text-red-900/55 mb-1">Foundation Quote Notes</p>
+        <h1 class="page-heading mb-0">Quote 4</h1>
+      </div>
+      <div class="rounded-2xl border border-red-900/15 bg-white/80 px-4 py-2 text-right shadow-sm">
+        <p class="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-red-900/50 mb-1">Page</p>
+        <p class="text-lg font-bold text-red-900 leading-none">7</p>
+      </div>
+    </div>
+
+    <div class="space-y-4 flex-1">
+      <section class="rounded-2xl border border-red-900/10 bg-white/75 p-4 shadow-sm">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="page-subheading !m-0">Chapter and Page</h2>
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45">Source details</span>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="rounded-xl border border-red-900/10 bg-amber-50/75 p-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45 mb-2">Chapter</p>
+            <p class="text-lg font-bold text-red-900">Add chapter number</p>
+          </div>
+          <div class="rounded-xl border border-red-900/10 bg-amber-50/75 p-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45 mb-2">Page</p>
+            <p class="text-lg font-bold text-red-900">4</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-2xl border border-red-900/10 bg-gradient-to-br from-white to-amber-50/70 p-4 shadow-sm">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="page-subheading !m-0">Quote</h2>
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45">Excerpt</span>
+        </div>
+        <div class="min-h-56 rounded-xl border border-dashed border-red-900/20 bg-white/80 p-4 text-gray-500 italic leading-relaxed">
+          Paste the quote from Foundation here. Keep it centered and readable so this page acts as the quote record.
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="inside-page rounded-lg h-full">
+    <div class="flex items-center justify-between gap-4 mb-5 pb-4 border-b border-red-900/10">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.35em] text-red-900/55 mb-1">Foundation Quote Notes</p>
+        <h1 class="page-heading mb-0">Analysis 4</h1>
+      </div>
+      <div class="rounded-2xl border border-red-900/15 bg-white/80 px-4 py-2 text-right shadow-sm">
+        <p class="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-red-900/50 mb-1">Page</p>
+        <p class="text-lg font-bold text-red-900 leading-none">8</p>
+      </div>
+    </div>
+
+    <div class="rounded-2xl border border-red-900/10 bg-white/75 p-4 shadow-sm h-full flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="page-subheading !m-0">Analysis</h2>
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-red-900/45">Interpretation</span>
+      </div>
+      <div class="flex-1 rounded-xl border border-red-900/10 bg-gradient-to-br from-amber-50/60 to-white/90 p-4 text-gray-500 italic leading-relaxed">
+        Write a short summary of the quote and explain its meaning, its connection to the chapter, and why it matters to the story.
+      </div>
+    </div>
+  </div>
 
 {% endblock %}

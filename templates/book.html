@@ -43,6 +43,11 @@
         --back-border: rgba(212, 212, 216, 0.35);
       }
 
+      html, body {
+        height: 100%;
+        min-height: 100%;
+      }
+
       body {
         background:
           radial-gradient(circle at 20% 20%, var(--accent-yellow-soft), transparent 30%),
@@ -56,6 +61,7 @@
       #flipbook {
         width: 900px;
         height: 600px;
+        aspect-ratio: 3 / 2;
         max-width: 100%;
         max-height: calc(100vh - 10rem);
         filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 40px rgba(0, 0, 0, 0.4));
@@ -69,6 +75,14 @@
       #flipbook .page {
         background-clip: padding-box;
         box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.1);
+      }
+
+      /* Ensure hard page backgrounds always fill the page cleanly */
+      #flipbook .hard,
+      #flipbook .page.hard {
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
       }
 
       #foundation-book .cover-page {
@@ -340,9 +354,10 @@
         }
 
         #flipbook {
-          width: min(94vw, 900px) !important;
-          height: auto !important;
+          width: min(94vw, 900px);
+          height: auto;
           max-height: calc(100vh - 11rem);
+          aspect-ratio: 3 / 2;
         }
 
         .book-controls {
@@ -368,7 +383,7 @@
 
       @media (max-width: 640px) {
         body {
-          background-attachment: fixed;
+          background-attachment: scroll;
         }
 
         main {
@@ -377,10 +392,11 @@
         }
 
         #flipbook {
-          width: calc(100vw - 0.75rem) !important;
-          height: auto !important;
+          width: calc(100vw - 0.75rem);
+          height: auto;
           max-height: calc(100vh - 8.5rem);
           transform-origin: center top;
+          aspect-ratio: 3 / 2;
         }
 
         .book-controls {
@@ -428,14 +444,14 @@
       <span class="icon">Home</span>
     </a>
 
-    <main class="flex flex-row h-screen w-full justify-center items-center px-4">
+    <main id="foundation-book" class="flex flex-row h-screen w-full justify-center items-center px-4">
       <div class="flex flex-col justify-center items-center">
         <div id="flipbook">
-          <div class="hard bg-[url(/file/cover.png)] bg-contain rounded-lg"></div>
-          <div class="hard bg-[url(/file/blank.png)] bg-contain rounded-lg"></div>
+          <div class="hard bg-[url(/file/cover.png)] bg-cover rounded-lg"></div>
+          <div class="hard bg-[url(/file/blank.png)] bg-cover rounded-lg"></div>
           {% block book_pages %}{% endblock %}
-          <div class="hard bg-[url(/file/blank.png)] bg-contain rounded-lg"></div>
-          <div class="hard bg-[url(/file/back.png)] bg-contain rounded-lg"></div>
+          <div class="hard bg-[url(/file/blank.png)] bg-cover rounded-lg"></div>
+          <div class="hard bg-[url(/file/back.png)] bg-cover rounded-lg"></div>
         </div>
       </div>
     </main>
@@ -461,34 +477,32 @@
       </button>
     </div>
   </body>
-  <script>
-    // Initialize TurnJS with professional settings
+    <script>
+      // Initialize TurnJS with professional settings
     const $flipbook = $("#flipbook");
 
     const BOOK_WIDTH = 900;
     const BOOK_HEIGHT = 600;
     const MOBILE_BREAKPOINT = 1024;
 
+    // Compute the largest scale that fits both available width and height while preserving aspect ratio
     const getBookSize = () => {
-      const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+      const viewportWidth = Math.max(320, window.innerWidth);
+      const viewportHeight = Math.max(480, window.innerHeight);
 
-      if (!isMobile) {
-        return { width: BOOK_WIDTH, height: BOOK_HEIGHT };
-      }
+      const horizontalPadding = 12; // accounts for page padding/margins
+      const verticalPadding = 140; // accounts for controls/headers
 
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
-      const availableWidth = Math.max(320, viewportWidth - 12);
-      const availableHeight = Math.max(520, viewportHeight - 140);
-      const mobileHeight = Math.min(760, availableHeight);
-      const mobileWidth = Math.round(mobileHeight * (BOOK_WIDTH / BOOK_HEIGHT));
-      const width = Math.min(availableWidth, mobileWidth);
-      const height = Math.round(width * (BOOK_HEIGHT / BOOK_WIDTH));
+      const availableWidth = Math.max(320, viewportWidth - horizontalPadding);
+      const availableHeight = Math.max(360, viewportHeight - verticalPadding);
 
-      return {
-        width,
-        height: Math.min(height, mobileHeight),
-      };
+      // Determine scale that fits within both dimensions, but not exceeding 1 (native size)
+      const scale = Math.min(availableWidth / BOOK_WIDTH, availableHeight / BOOK_HEIGHT, 1);
+
+      const width = Math.max(320, Math.round(BOOK_WIDTH * scale));
+      const height = Math.max(200, Math.round(BOOK_HEIGHT * scale));
+
+      return { width, height };
     };
 
     let bookSize = getBookSize();

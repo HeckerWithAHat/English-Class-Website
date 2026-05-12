@@ -1,13 +1,44 @@
 {% extends "book.html" %}
 
-{% block title %}Foundation Project | Home{% endblock %}
+{% block title %}Foundation Project | Purpose{% endblock %}
 
 {% block book_pages %}
-	<div class="bg-gray-300 rounded-lg">
-		Page 1
+
+<!-- First page: title-only for the long essay -->
+<div class="inside-page rounded-lg h-full flex items-center justify-center">
+	<div class="text-center p-8">
+		<h1 class="page-heading text-5xl font-bold mb-0">The Purpose of the Author</h1>
+		<p class="mt-4 text-sm text-gray-500">Foundation draws inspiration from many sources, and is heavily influenced by Asimov's life and interests. But why did he write Foundation?</p>
 	</div>
-	<div class="bg-gray-300 rounded-lg">
-		Page 2
+</div>
+
+<!-- Essay page 1 -->
+<div class="inside-page rounded-lg h-full">
+	<div class="rounded-2xl border border-red-900/10 bg-white/75 p-8 shadow-sm min-h-[28rem]">
+		<div class="text-gray-700 leading-relaxed">
+			<p>Essay — page 1. Paste the first segment of the author's essay here. Use multiple paragraphs; the styling will preserve spacing and readability.</p>
+		</div>
 	</div>
+</div>
+
+<!-- Essay page 2 -->
+<div class="inside-page rounded-lg h-full">
+	<div class="rounded-2xl border border-red-900/10 bg-white/75 p-8 shadow-sm min-h-[28rem]">
+		<div class="text-gray-700 leading-relaxed">
+			<p>Essay — page 2. Continue the essay here. Duplicate this block if you need additional pages.</p>
+		</div>
+	</div>
+</div>
+
+<!-- Essay page 3 -->
+<div class="inside-page rounded-lg h-full">
+	<div class="rounded-2xl border border-red-900/10 bg-white/75 p-8 shadow-sm min-h-[28rem]">
+		<div class="text-gray-700 leading-relaxed">
+			<p>Essay — page 3. Continue the essay here.</p>
+		</div>
+	</div>
+</div>
+
+<!-- Add more essay pages by copying an essay page block above. -->
 
 {% endblock %}

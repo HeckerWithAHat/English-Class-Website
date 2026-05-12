@@ -1,58 +1,72 @@
-{% extends "book.html" %} {% block title %}Foundation Project | Author{%
-endblock %} {% block book_pages %}
+{% extends "book.html" %}
+
+{% block title %}Foundation Project | Author{% endblock %}
+
+{% block book_pages %}
+
 <!-- Page 1: Author Image and Name -->
-<div
-  class="bg-white rounded-lg p-8 flex flex-col items-center justify-center h-full"
->
-  <div class="mb-6">
-    <img
-      src="https://cdn.britannica.com/82/195182-050-97684526/Isaac-Asimov-1979.jpg"
-      alt="Isaac Asimov"
-      class="w-64 h-64 object-cover border-4 border-gray-400 rounded-lg"
-    />
+<div class="inside-page rounded-lg h-full">
+  <div class="flex items-center justify-between gap-4 mb-5 pb-4 border-b border-red-900/10">
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-red-900/55 mb-1">Author Profile</p>
+      <h1 class="page-heading mb-0">Isaac Asimov</h1>
+    </div>
+    <div class="rounded-2xl border border-red-900/15 bg-white/80 px-4 py-2 text-right shadow-sm">
+      <p class="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-red-900/50 mb-1">Born</p>
+      <p class="text-lg font-bold text-red-900 leading-none">1920</p>
+    </div>
   </div>
-  <h1 class="text-4xl font-bold text-gray-800 text-center">Isaac Asimov</h1>
+
+  <div class="flex flex-col items-center justify-center p-6">
+    <div class="mb-6">
+      <img src="https://cdn.britannica.com/82/195182-050-97684526/Isaac-Asimov-1979.jpg" alt="Isaac Asimov" class="w-64 h-64 object-cover rounded-lg border-4 border-red-900/20 shadow-sm" />
+    </div>
+    <p class="text-gray-600 italic max-w-3xl text-center">Isaac Asimov was a prolific author and professor of biochemistry, best known for the Foundation series and the Three Laws of Robotics.</p>
+  </div>
 </div>
 
 <!-- Page 2: Early Life & Background -->
-<div class="bg-white rounded-lg p-8">
-  <h2 class="text-3xl font-bold text-gray-800 mb-4">Early Life & Background</h2>
-  <div class="bg-gray-100 rounded-lg p-6 h-max border-2 border-gray-300">
-    <p class="text-gray-500 italic">
-      Isaac Asimov was born in Petrovichi, Russia, to a Jewish family and
-      emigrated to the United States with his parents at the age of three,
-      settling in Brooklyn, New York. Growing up, he worked in his family’s
-      candy store, where he developed a fascination with science fiction after
-      discovering pulp magazines. A gifted student, Asimov skipped several
-      grades in school and went on to attend Columbia University, earning his
-      bachelor’s degree in chemistry in 1939. He completed his master’s in 1941
-      and his Ph.D. in biochemistry in 1948. During World War II, he worked as a
-      civilian chemist at the Naval Air Experimental Station in Philadelphia.
+<div class="inside-page rounded-lg h-full">
+  <div class="flex items-center justify-between gap-4 mb-5 pb-4 border-b border-red-900/10">
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-red-900/55 mb-1">Background</p>
+      <h1 class="page-heading mb-0">Early Life & Background</h1>
+    </div>
+    <div class="rounded-2xl border border-red-900/15 bg-white/80 px-4 py-2 text-right shadow-sm">
+      <p class="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-red-900/50 mb-1">Origin</p>
+      <p class="text-lg font-bold text-red-900 leading-none">Petrovichi</p>
+    </div>
+  </div>
+
+  <div class="rounded-2xl border border-red-900/10 bg-white/75 p-6 shadow-sm">
+    <p class="text-gray-500 italic leading-relaxed">
+      Isaac Asimov was born in Petrovichi, Russia, and emigrated to the United States at the age of three, settling in Brooklyn, New York. He worked in his family’s candy store and developed an early interest in science fiction after discovering pulp magazines. A gifted student, Asimov attended Columbia University and earned degrees in chemistry and biochemistry, later working as a civilian chemist during World War II.
     </p>
   </div>
 </div>
 
 <!-- Page 3: Career & Achievements -->
-<div class="bg-white rounded-lg p-8">
-  <h2 class="text-3xl font-bold text-gray-800 mb-4">Career & Achievements</h2>
-  <div class="bg-gray-100 rounded-lg p-6 h-max border-2 border-gray-300">
-    <p class="text-gray-500 italic">
-      Asimov’s writing career began early when he sold his first story,
-      “Marooned off Vesta,” to Amazing Stories in 1939, and by 1941, he had
-      published the short story “Nightfall,” which is still regarded as one of
-      the greatest science fiction stories ever written. His career skyrocketed
-      in the 1940s, a period known as the Golden Age of Science Fiction. During
-      this time, he began writing the stories that would later form the
-      Foundation series, inspired by Edward Gibbon’s The History of the Decline
-      and Fall of the Roman Empire. In addition to Foundation, Asimov is famous
-      for his Robot series, including I, Robot (1950), which introduced the
-      “Three Laws of Robotics”. 
+<div class="inside-page rounded-lg h-full">
+  <div class="flex items-center justify-between gap-4 mb-5 pb-4 border-b border-red-900/10">
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-red-900/55 mb-1">Career</p>
+      <h1 class="page-heading mb-0">Career & Achievements</h1>
+    </div>
+    <div class="rounded-2xl border border-red-900/15 bg-white/80 px-4 py-2 text-right shadow-sm">
+      <p class="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-red-900/50 mb-1">Genre</p>
+      <p class="text-lg font-bold text-red-900 leading-none">SciFi</p>
+    </div>
+  </div>
+
+  <div class="rounded-2xl border border-red-900/10 bg-gradient-to-br from-rose-50/40 to-white/90 p-6 shadow-sm">
+    <p class="text-gray-500 italic leading-relaxed">
+      Asimov’s writing career began when he sold his first story in 1939. He published many seminal works — including the Foundation series and I, Robot — and helped define the Golden Age of Science Fiction. His work combined scientific insight with humanistic storytelling and remains influential across literature and popular culture.
     </p>
   </div>
 </div>
 
-<div class="bg-white rounded-lg p-8">
-  
+<div class="inside-page rounded-lg h-full">
+
 </div>
 
 {% endblock %}

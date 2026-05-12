@@ -1,5 +1,4 @@
 - Summary
 - Purpose
-- Author
 - Research
 - Quotes
